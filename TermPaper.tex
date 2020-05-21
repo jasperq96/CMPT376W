@@ -1,0 +1,876 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{extarrows}
+\usepackage{graphicx}
+\usepackage[backend=biber,
+style=numeric,
+sorting=none,
+isbn=false,
+doi=false,
+url=false,
+]{biblatex}\addbibresource{bibliography.bib}
+
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage[toc,page]{appendix}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{shapes.symbols,shapes.geometric,shadows,arrows.meta}
+\tikzset{>={Latex[width=1.5mm,length=2mm]}}
+\usepackage{flowchart}\usepackage[paperheight=11.0in,paperwidth=8.5in,left=1.0in,right=1.0in,top=1.0in,bottom=1.0in,headheight=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\TabPositions{0.5in,1.0in,1.5in,2.0in,2.5in,3.0in,3.5in,4.0in,4.5in,5.0in,5.5in,6.0in,}
+
+\urlstyle{same}
+
+\renewcommand{\_}{\kern-1.5pt\textunderscore\kern-1.5pt}
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+
+
+
+\setlistdepth{9}
+\renewlist{enumerate}{enumerate}{9}
+		\setlist[enumerate,1]{label=\arabic*)}
+		\setlist[enumerate,2]{label=\alph*)}
+		\setlist[enumerate,3]{label=(\roman*)}
+		\setlist[enumerate,4]{label=(\arabic*)}
+		\setlist[enumerate,5]{label=(\Alph*)}
+		\setlist[enumerate,6]{label=(\Roman*)}
+		\setlist[enumerate,7]{label=\arabic*}
+		\setlist[enumerate,8]{label=\alph*}
+		\setlist[enumerate,9]{label=\roman*}
+
+\renewlist{itemize}{itemize}{9}
+		\setlist[itemize]{label=$\cdot$}
+		\setlist[itemize,1]{label=\textbullet}
+		\setlist[itemize,2]{label=$\circ$}
+		\setlist[itemize,3]{label=$\ast$}
+		\setlist[itemize,4]{label=$\dagger$}
+		\setlist[itemize,5]{label=$\triangleright$}
+		\setlist[itemize,6]{label=$\bigstar$}
+		\setlist[itemize,7]{label=$\blacklozenge$}
+		\setlist[itemize,8]{label=$\prime$}
+
+
+
+
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{ 
+\vspace{\baselineskip}
+}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\topsep}{0pt}\setlength{\parindent}{0pt}
+
+
+
+
+\renewcommand{\arraystretch}{1.3}
+
+
+
+
+
+
+\begin{document}
+\setlength{\parskip}{12.0pt}
+{\fontsize{16pt}{19.2pt}\selectfont \textbf{\uline{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}}\par}\par
+
+\begin{FlushRight}
+{\fontsize{26pt}{31.2pt}\selectfont \textbf{Software Requirements Specification}\par}
+\end{FlushRight}\par
+
+\setlength{\parskip}{20.04pt}
+\begin{FlushRight}
+{\fontsize{24pt}{28.8pt}\selectfont \textbf{For}\par}
+\end{FlushRight}\par
+
+\setlength{\parskip}{12.0pt}
+\begin{FlushRight}
+{\fontsize{20pt}{24.0pt}\selectfont \textbf{Mental Health Care - Patient Management System (MHC-PMS)}\par}
+\end{FlushRight}\par
+
+
+\vspace{\baselineskip}
+\begin{FlushRight}
+{\fontsize{18pt}{21.6pt}\selectfont \textbf{Version 1.0 Approved}\par}
+\end{FlushRight}\par
+
+
+\vspace{\baselineskip}
+\begin{FlushRight}
+{\fontsize{18pt}{21.6pt}\selectfont \textbf{Prepared by Jasper Quan $\&$  David Huang}\par}
+\end{FlushRight}\par
+
+
+\vspace{\baselineskip}
+\begin{FlushRight}
+{\fontsize{18pt}{21.6pt}\selectfont \textbf{Simon Fraser University - CMPT 376W}\par}
+\end{FlushRight}\par
+
+
+\vspace{\baselineskip}
+\begin{FlushRight}
+{\fontsize{18pt}{21.6pt}\selectfont \textbf{March 27th, 2020}\par}
+\end{FlushRight}\par
+
+
+
+
+
+\newpage
+
+\vspace{\baselineskip}{\fontsize{13pt}{15.6pt}\selectfont \textbf{\uline{Table of Contents}}\par}\par
+
+\begin{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont \textbf{Introduction}\par}\par
+
+\begin{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont Purpose\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Document Conventions\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Intended Audience and Reading Suggestions\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Project Scope\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont References\par}\par
+
+
+\end{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont \textbf{Overall Description}\par}\par
+
+\begin{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont Product Perspective\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Product Functions\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont User Classes and Characteristics\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Operating Environment\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Design and Implementation Constraints\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont User Documentation\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Assumptions and Dependencies\par}\par
+
+
+\end{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont \textbf{ External Interface Requirements}\par}\par
+
+\begin{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont User Interfaces\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Hardware Interfaces\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Software Interfaces\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Communications Interfaces\par}\par
+
+
+\end{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont \textbf{System Features}\par}\par
+
+\begin{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont Add Patient Information\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Edit Patient Information\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Patient Monitoring\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Patient Scheduling\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Administrative Reporting\par}\par
+
+
+\end{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont \textbf{Other Nonfunctional Requirements}\par}\par
+
+\begin{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont Performance Requirements\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Safety Requirements\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Security Requirements\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Software Quality Attributes\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Business Rules\par}\par
+
+
+\end{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont \textbf{Other Requirements}\par}
+\end{enumerate}\par
+
+\begin{enumerate}
+	\item {\fontsize{13pt}{15.6pt}\selectfont Appendix A: Glossary\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Appendix B: Analysis Models\par}\par
+
+	\item {\fontsize{13pt}{15.6pt}\selectfont Appendix C: To Be Determined List\par}
+\end{enumerate}\par
+
+\newpage
+
+\section*{1. \hspace*{10pt}Introduction}
+\addcontentsline{toc}{section}{1. \hspace*{10pt}Introduction}
+\setlength{\parskip}{3.96pt}
+\subsection*{1.1 \hspace*{10pt}Purpose}
+\addcontentsline{toc}{subsection}{1.1 \hspace*{10pt}Purpose}
+\tab The purpose of this document is to build a Mental Health Care Patient Management system that can maintain an informational database on new and existing patients for faster data retrieval compared to outdated methods such as pencil and paper. \par
+
+\subsection*{1.2 \hspace*{10pt}Document Conventions}
+\addcontentsline{toc}{subsection}{1.2 \hspace*{10pt}Document Conventions}
+
+\vspace{\baselineskip}
+
+
+
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{1.13in}p{4.97in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{1.13in}}{MHC-PMS} & 
+\multicolumn{1}{|p{4.97in}|}{Mental Health Care - Patient Management System} \\
+\hhline{--}
+%row no:2
+\multicolumn{1}{|p{1.13in}}{Mentcare} & 
+\multicolumn{1}{|p{4.97in}|}{Mental Health Care System} \\
+\hhline{--}
+%row no:3
+\multicolumn{1}{|p{1.13in}}{} & 
+\multicolumn{1}{|p{4.97in}|}{} \\
+\hhline{--}
+
+\end{tabular}
+ \end{table}
+
+
+
+
+
+\vspace{\baselineskip}
+\subsection*{1.3 \hspace*{10pt}Intended Audience and Reading Suggestions}
+\addcontentsline{toc}{subsection}{1.3 \hspace*{10pt}Intended Audience and Reading Suggestions}
+The\ intended audience for this document are the doctors and nurses who may use this system as well as potential stakeholders for this project.  \par
+
+\subsection*{1.4 \hspace*{10pt}Product Scope}
+\addcontentsline{toc}{subsection}{1.4 \hspace*{10pt}Product Scope}
+\tab The main purpose of the MHC-PMS is to maintain an informational database for new and existing patients for faster data retrieval compared to outdated methods such as pencil and paper with folders. The database will be a centralized patient information database when connected to a secure network, and a free-standing database when disconnected from the network.\par
+
+\subsection*{1.5 \hspace*{10pt}References}
+\addcontentsline{toc}{subsection}{1.5 \hspace*{10pt}References}
+\begin{itemize}
+	\item Topic 1 Notes (from the 2019 Winter Semester of CMPT276)\par
+
+	\item Software Engineering (10th Edition) by Ian Sommerville
+\end{itemize}\par
+
+\section*{2. Overall Description}
+\addcontentsline{toc}{section}{2. Overall Description}
+\subsection*{2.1 \hspace*{10pt}Product Perspective}
+\addcontentsline{toc}{subsection}{2.1 \hspace*{10pt}Product Perspective}
+MHC-PMS is a patient management system created for medical employees to access/modify patient information regarding previous/current injuries. The system was originally created to help organise patient documentation and make the process of updating and storing simpler. The current system currently offers storage of:\par
+
+
+\vspace{\baselineskip}
+\begin{adjustwidth}{0.5in}{0.0in}
+\textbf{Patient Details}:\par
+
+\end{adjustwidth}
+
+\begin{itemize}
+	\item First, middle, and last name of patients\par
+
+	\item Address\par
+
+	\item Family doctor\par
+
+	\item Time checked in/out\par
+
+	\item Birthday\par
+
+	\item Affiliates and ways to contact them\par
+
+	\item Gender\par
+
+	\item Phone number\par
+
+	\item Allergies\par
+
+	\item Symptoms\par
+
+	\item Past/current medical conditions (incidents)\par
+
+	\item Past/current prescribed medicine along with exact dosages\par
+
+	\item Past/present hospital visits (hospital names)
+\end{itemize}\par
+
+\subsection*{2.2 \hspace*{10pt}Product Functions}
+\addcontentsline{toc}{subsection}{2.2 \hspace*{10pt}Product Functions}
+\begin{itemize}
+	\item \textbf{Add / Edit Patient Information}\par
+
+	\item \textbf{View Patient Information}\par
+
+	\item \textbf{Patient Monitoring}\par
+
+	\item \textbf{Scheduling}\par
+
+	\item \textbf{Administrative Reporting}
+\end{itemize}\par
+
+\subsection*{2.3 \hspace*{10pt}User Classes and Characteristics}
+\addcontentsline{toc}{subsection}{2.3 \hspace*{10pt}User Classes and Characteristics}
+The patient database will be hosted in a cloud-based server and local systems will have their own copy of this database. It will be updated once connected to a secure server. A class diagram of this system is shown below.\par
+
+
+
+
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=4.28in,height=3.23in]{./media/image3.png}
+	\end{Center}
+\end{figure}
+
+
+
+
+\par
+
+\subsection*{2.4 \hspace*{10pt}Operating Environment}
+\addcontentsline{toc}{subsection}{2.4 \hspace*{10pt}Operating Environment}
+The operating environment for this system is listed below.\par
+
+\begin{itemize}
+	\item Centralized database\par
+
+	\item Client / Server system\par
+
+	\item Operating system: Windows 7/10\par
+
+\setlength{\parskip}{0.0pt}
+	\item Database: SQL\par
+
+\setlength{\parskip}{12.0pt}
+	\item Platform: Visual Basic .NET / Java / PHP
+\end{itemize}\par
+
+\setlength{\parskip}{3.96pt}
+\subsection*{2.5 \hspace*{10pt}Design and Implementation Constraints}
+\addcontentsline{toc}{subsection}{2.5 \hspace*{10pt}Design and Implementation Constraints}
+\begin{enumerate}
+	\item Using a centralized database management system to implement the database\par
+
+	\item Global Schema, Fragmentation Schema, and Functional Allocation
+\end{enumerate}\par
+
+\subsection*{2.6 \hspace*{10pt}User Documentation}
+\addcontentsline{toc}{subsection}{2.6 \hspace*{10pt}User Documentation}
+\setlength{\parskip}{0.0pt}
+\begin{itemize}
+	\item User manuals\par
+
+	\item Website FAQ\par
+
+\setlength{\parskip}{12.0pt}
+	\item Website tutorials
+\end{itemize}\par
+
+\setlength{\parskip}{3.96pt}
+\subsection*{2.7 \hspace*{10pt}Assumptions and Dependencies}
+\addcontentsline{toc}{subsection}{2.7 \hspace*{10pt}Assumptions and Dependencies}
+Two different laws affect the system: laws on data protection that govern the confidentiality of personal information and mental health laws that govern the compulsory detention of patients deemed to be a danger to themselves or others. These constraints must be taken into consideration when designing this system to see what patient information can and cannot be stored. As for software dependencies, this system does not have any as it is more like a stand-alone program.\par
+
+\section*{3. \hspace*{10pt}External Interface Requirements}
+\addcontentsline{toc}{section}{3. \hspace*{10pt}External Interface Requirements}
+\subsection*{3.1 \hspace*{10pt}User Interfaces}
+\addcontentsline{toc}{subsection}{3.1 \hspace*{10pt}User Interfaces}
+
+\vspace{\baselineskip}
+\textbf{Add / Edit Patient Information: }Opens up an (empty or filled) form where you can add new patient information or edit current information already in the system\par
+
+
+\vspace{\baselineskip}
+\textbf{View Patient Information: }Looks up existing patient information, provides a medical history summary so that doctors and nurses can quickly learn about key problems and treatments that have been prescribed\par
+
+
+\vspace{\baselineskip}
+\textbf{Patient Monitoring: }Opens up windows that allow nurses and doctors to see real-time information on patients\par
+
+
+\vspace{\baselineskip}
+\textbf{Scheduling: }Mainly for doctors who want to add or change scheduling times for their patients, includes an interactive calendar\par
+
+
+\vspace{\baselineskip}
+\textbf{Administrative Reporting: }A section where nurses and doctors can see the generated monthly management report which shows:\par
+
+\begin{itemize}
+	\item $\#$  patients treated at each clinit\par
+
+	\item $\#$  patients entered / left health care system\par
+
+	\item $\#$  patients sectioned\par
+
+	\item Drugs prescribed and their costs\par
+
+	\item Etc. 
+\end{itemize}\par
+
+\subsection*{3.2 \hspace*{10pt}Hardware Interfaces}
+\addcontentsline{toc}{subsection}{3.2 \hspace*{10pt}Hardware Interfaces}
+\tab The MHC-PMS is designed to run on a laptop, so that it may be accessed and used from sites that do not have secure network connectivity. This system is not a complete medical records system and does not maintain information about other medical conditions. However, it can interact / exchange data with other clinical information systems.\par
+
+
+\vspace{\baselineskip}
+{\fontsize{17pt}{20.4pt}\selectfont \textbf{3.3}{\fontsize{7pt}{8.4pt}\selectfont  \tab {\fontsize{17pt}{20.4pt}\selectfont \textbf{Software Interfaces}\par}\par}\par}\par
+
+\tab As the MHC-PMS system relies on a database to function, an SQL-based database is a necessity. For operating systems, Windows 7 or 10 is required. The main database will be stored on the cloud with a system that meets these requirements. \par
+
+
+
+
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=5.79in,height=3.07in]{./media/image7.png}
+	\end{Center}
+\end{figure}
+
+
+
+
+\par
+
+\subsection*{3.4 \hspace*{10pt}Communications Interfaces}
+\addcontentsline{toc}{subsection}{3.4 \hspace*{10pt}Communications Interfaces}
+\setlength{\parskip}{12.0pt}
+From a nurse or doctors perspective, this would be a stand-alone program they can open and connect to the main network with. They will be able to open up electronic forms to add / edit / view patient information and view administrative details. This data will be pulled from the cloud which is hosted on a seperate computer, and can be stored offline to make a local copy of the database. \par
+
+From a privacy perspective, there are some issues. Privacy is easiest to maintain when there is only a single copy of the system data. However to ensure availability in the event of server failure or when disconnected from a network, multiple copies of data should be maintained. This way there is less chance of data being lost completely, but the risk of information being stolen is higher.\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+\section*{4. \hspace*{10pt}System Feature}
+\addcontentsline{toc}{section}{4. \hspace*{10pt}System Feature}
+\setlength{\parskip}{3.96pt}
+\subsection*{4.1 \hspace*{10pt}Add Patient Information}
+\addcontentsline{toc}{subsection}{4.1 \hspace*{10pt}Add Patient Information}
+\setlength{\parskip}{12.0pt}
+4.1.1\  \tab Description and Priority\par
+
+(High Priority) Allow clinical staff to insert new patient data into the main database.\par
+
+4.1.2\  \tab Stimulus/Response Sequences\par
+
+Once the software has been opened up, navigate to the top left hand corner. There the user will click on the drop down menu followed by $``$Add patient$"$ . The user will be directed to a new screen with a form to be filled out by the user with the patient's information. After all information is filled out, the user will click the $``$submit$"$  button located at the bottom right corner of the form. Shortly after, a pop-up window will display either $``$Successfully added patient$"$  followed by their name. If the addition to the database failed, the pop-up window will say $``$Failed to add patient$"$ .\par
+
+4.1.3\  \tab Functional Requirements\par
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-1: Software must be connected to the internet, this can be checked by looking at the top right corner where a circle is displayed. If it is green, it means the software is currently connected to the database and any additions made will go through. If the circle is red, the software is not connected to the database and any additions of new patients will not go through.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-2: Clicking the top left drop down menu will display the tab for adding a new patient to the database\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-3: Clicking $``$Add patient$"$  will direct the user to a new page that displays the patient information form.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-4: Any required fields(indicated by a yellow star next to the text box) that are unfilled at time of submission by the user will be highlighted in a red border. \par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-5: If submission is successful, a pop-up window saying $``$Successfully added patient$"$  will be displayed, otherwise it will say $``$Failed to add patient$"$ . Both of which can be closed by clicking the $``$ok$"$  button on the bottom right corner of the pop-up window.\par
+
+\end{adjustwidth}
+
+\setlength{\parskip}{3.96pt}
+\subsection*{4.2 \hspace*{10pt}Edit Patient Information}
+\addcontentsline{toc}{subsection}{4.2 \hspace*{10pt}Edit Patient Information}
+\setlength{\parskip}{12.0pt}
+4.2.1\  \tab Description and Priority\par
+
+(High Priority) Allow clinical staff to modify current patient data in the main database.\par
+
+4.2.2\  \tab Stimulus/Response Sequences\par
+
+Once the software has been opened up, navigate to the top left hand corner. There the user will click on the drop down menu followed by $``$Modify patient$"$ . The user will be directed to a page where in the center a drop down box will be located. The user can click on the drop down menu which will display all patients currently in the database, or they can type in the drop down box. If the user types in the drop down box the drop down box will automatically display all patients that match identically with what the user wrote. When the user finds the patient they want to modify, they will click their name, at which point they will be taken to a page similar to adding a new patient. The patient's information form will be displayed for the user to modify as they wish. After all information is filled out, the user will click the $``$submit$"$  button located at the bottom right corner of the form. Shortly after, a pop-up window will display either $``$Changes saved for$"$  followed by their name. If the modification to the database failed, the pop-up window will say $``$Failed to save changes$"$ .\par
+
+4.2.3\  \tab Functional Requirements\par
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-1: Software must be connected to the internet, this can be checked by looking at the top right corner where a circle is displayed. If it is green, it means the software is currently connected to the database and any additions made will go through. If the circle is red, the software is not connected to the database and any additions of new patients will not go through.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-2: Clicking the top left drop down menu will display the tab for modifying a patient in the database\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-3: Clicking $``$Modify patient$"$  will direct the user to a new page that will have a drop down menu that shows all current users. The user can type in this drop down menu to filter out patients to make searching simpler and quicker.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-4: Once the patient is found and the user clicks on their name in the drop down menu, they will be directed to another page that will display the patients current information. At this point the user can make any necessary modifications.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-5: Any required fields(indicated by a yellow star next to the text box) that are unfilled at time of submission by the user will be highlighted in a red border. \par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-6: If submission is successful, a pop-up window saying $``$Successfully added patient$"$  will be displayed, otherwise it will say $``$Failed to add patient$"$ . Both of which can be closed by clicking the $``$ok$"$  button on the bottom right corner of the pop-up window.\par
+
+\end{adjustwidth}
+
+
+\vspace{\baselineskip}
+\setlength{\parskip}{3.96pt}
+\subsection*{4.3 \hspace*{10pt}Patient Monitoring}
+\addcontentsline{toc}{subsection}{4.3 \hspace*{10pt}Patient Monitoring}
+\setlength{\parskip}{12.0pt}
+4.3.1\  \tab Description and Priority\par
+
+(High Priority) Notifies clinical staff about potential problems regarding certain patients, as well as keeping track of patients who are legally required to check in at specific times.\par
+
+4.3.2\  \tab Stimulus/Response Sequences\par
+
+During the addition/modification of a patient's information, the user can issue a notification setting in which it will keep track of the patients check-ins, as well as notify the user through a notification message of potential problems that might occur due to recent treatments or change in medical dosages.\par
+
+4.3.3\  \tab Functional Requirements\par
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-1: Software must be connected to the internet, this can be checked by looking at the top right corner where a circle is displayed. If it is green, it means the software is currently connected to the database and any additions made will go through. If the circle is red, the software is not connected to the database and any additions of new patients will not go through.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-2: Notification function will be running 24/7\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-3: During the addition/modification of a patient, the user will input their best way of contact for the notification system. This includes email or notification messages on their desktop and/or cellphone.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-4: Using the integrated $``$Threat Algorithm$"$  that analyzes a specific patient’s most recent changes in treatments and dosages, determines whether or not to notify the recipient of potential threats.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-5: If a potential danger is detected, notify the recipient via prefered method.\par
+
+\end{adjustwidth}
+
+\setlength{\parskip}{3.96pt}
+\subsection*{4.4 \hspace*{10pt}Patient Scheduling}
+\addcontentsline{toc}{subsection}{4.4 \hspace*{10pt}Patient Scheduling}
+\setlength{\parskip}{12.0pt}
+4.4.1\  \tab Description and Priority\par
+
+(Medium Priority) Allows doctors to schedule patients.\par
+
+4.4.2\  \tab Stimulus/Response Sequences\par
+
+By clicking the top left drop down menu, the user can then click the tab for scheduling. They will be directed to a page that will ask for the name and identification number of the user (only doctors/therapists have access to this section). If a valid name and identification number is submitted, an interactive calendar of the provided username will be displayed, in which the user can then click on specific dates to add/remove appointments. When a day is clicked, a small pop-up window will display the current appointments. If an appointment is clicked, another small pop-up window will show the time of the appointment along with the patient's name and mental problem. This window allows the user to modify the time, or completely delete the appointment. To exit the smaller pop-up windows the user can click anywhere outside of the pop-up windows border. Once the user has finished with their scheduling, they can save it by clicking the save button located on the bottom right corner or just close the window.\par
+
+4.4.3\  \tab Functional Requirements\par
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-1: Software must be connected to the internet, this can be checked by looking at the top right corner where a circle is displayed. If it is green, it means the software is currently connected to the database and any additions made will go through. If the circle is red, the software is not connected to the database and any additions of new patients will not go through.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-2: Clicking the top left drop down menu will display the tab for $``$Scheduling$"$ \par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-3: Clicking $``$Scheduling$"$  will take the user to a new screen that will ask for the users name and id.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-4: If a valid name and id is provided, the user will be directed to a new page with an interactive calendar. If an invalid name or id is given, the user will be asked to try again.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-5: When the user clicks on a specific date, a pop-up window will display the current appointments for that day.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-6: When the user clicks on an appointment, a window will pop up displaying the time and patient name along with their current mental health and most recent history changes (if any). Here they can modify the time or delete the appointment entirely.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-7: Clicking anywhere outside of the smaller pop up windows will close them.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-8: The updated calendar will be saved when the user clicks on the save button located on the bottom right corner, or when the user leaves the window.\par
+
+\end{adjustwidth}
+
+
+\vspace{\baselineskip}
+\setlength{\parskip}{3.96pt}
+\subsection*{4.5 \hspace*{10pt}Administrative Reporting}
+\addcontentsline{toc}{subsection}{4.5 \hspace*{10pt}Administrative Reporting}
+\setlength{\parskip}{12.0pt}
+4.5.1\  \tab Description and Priority\par
+
+(Low Priority) Generates a monthly management report showing the number of patients treated at each clinic, the number of patients who have entered and left the care system, the number of patients sectioned, the drugs prescribed and their costs, etc.\par
+
+4.5.2\  \tab Stimulus/Response Sequences\par
+
+The user will click on the top left drop down menu at which they will then click on the $``$report$"$  button. This will redirect them do a page that will display the monthly report regarding patients and drugs prescribed\par
+
+4.5.3\  \tab Functional Requirements\par
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-1: Software must be connected to the internet, this can be checked by looking at the top right corner where a circle is displayed. If it is green, it means the software is currently connected to the database and any additions made will go through. If the circle is red, the software is not connected to the database and any additions of new patients will not go through.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-2: Once the user clicks the $``$Report$"$  button, they will be redirected to a page that will display a monthly report.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-3: The user can highlight, copy, save, duplicate or print the report (all buttons are located in a taskbar located above the report window). But they cannot edit.\par
+
+\end{adjustwidth}
+
+\begin{adjustwidth}{0.5in}{0.0in}
+REQ-4: To exit, the user will close the window.\par
+
+\end{adjustwidth}
+
+
+\vspace{\baselineskip}
+{\fontsize{23pt}{27.6pt}\selectfont \textbf{5.}{\fontsize{7pt}{8.4pt}\selectfont  \tab {\fontsize{23pt}{27.6pt}\selectfont \textbf{Other Nonfunctional Requirements}\par}\par}\par}\par
+
+\setlength{\parskip}{3.96pt}
+\subsection*{5.1\ \ \ \  Performance Requirements}
+\addcontentsline{toc}{subsection}{5.1\ \ \ \  Performance Requirements}
+If the main patient database is held on a single server / computer, then problems may arise if that computer crashes or stops functioning. A solution to this may be to host this database on multiple servers, so that if one crashes then there are still others functional. Preferably hosted in different buildings, so that an electrical outage in one neighborhood would not be a problem. The cluster of systems should be able to update each other when presented with new information. \par
+
+\subsection*{5.2 \hspace*{10pt}Safety Requirements}
+\addcontentsline{toc}{subsection}{5.2 \hspace*{10pt}Safety Requirements}
+From the nature of this software system, patients may potentially be harmed if incorrect information was inputted into the database. A safeguard would be that when entering or editing patient information, there would be a double-check window that pops up after submitting the form. Also, as some mental illnesses cause patients to become suicidal or a danger to other people, the system will warn medical staff about these potentially dangerous patients.\par
+
+\subsection*{5.3 \hspace*{10pt}Security Requirements}
+\addcontentsline{toc}{subsection}{5.3 \hspace*{10pt}Security Requirements}
+One concern would be that unauthorized personnel may physically access the system. A workaround for this can be that after a certain amount of time (for example when the computer goes into screensaver mode) then it would prompt the user to re-enter their credentials. And as stated above in section 5.1, multiple copies of the database must be preserved as the data must be available when needed or else a safety hazard may occur. This leads to a higher risk of data being stolen, and additional security measures must be put into place to prevent this from happening.\par
+
+
+\vspace{\baselineskip}
+\subsection*{5.4 \hspace*{10pt}Software Quality Attributes}
+\addcontentsline{toc}{subsection}{5.4 \hspace*{10pt}Software Quality Attributes}
+
+\vspace{\baselineskip}
+\textbf{Adaptability: }The system will be able to adapt to different scenarios and recover accordingly.\par
+
+
+\vspace{\baselineskip}
+\textbf{Availability: }Due to the nature of the system, the system must be available 24/7 when needed.\par
+
+
+\vspace{\baselineskip}
+\textbf{Maintainability: }Upon failure, error notifications will be sent out to the correct departments so that they may be able to fix the problem.\par
+
+
+\vspace{\baselineskip}
+\textbf{Portability: }As cloud servers should be hosted on computers, portability is limited. An executable can be run on a new computer to set up a new node in the cloud cluster. \par
+
+
+\vspace{\baselineskip}
+\textbf{Reliability: }The system should have a 99.9$\%$  uptime per year. This means that downtime should equal to only a couple of minutes per year. \par
+
+
+\vspace{\baselineskip}
+\textbf{Robustness: }The system will have measures in place on certain scenarios of system failure.\par
+
+
+\vspace{\baselineskip}
+\textbf{Testability: }A self-diagnose function is implemented in each server node to check the health of the system. \par
+
+
+\vspace{\baselineskip}
+\textbf{Usability: }The system is designed to be user-friendly but the nurses and doctors that use this system should still be trained before doing so.\par
+
+\subsection*{5.5 \hspace*{10pt}Business Rules}
+\addcontentsline{toc}{subsection}{5.5 \hspace*{10pt}Business Rules}
+\begin{itemize}
+	\item Doctors/Therapists have full access to the software and it’s offered features\par
+
+	\item Nurses/Receptionists can add/edit patients, view monthly reports and appointment schedules for doctors/therapists. \par
+
+	\item Receptionists have the added ability to make appointments for their employer, however the changes/additions have to be finalized by the employer.\par
+
+	\item Functions will be limited based on the user’s initial log-in info when the software is initially opened.
+\end{itemize}\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+\section*{6. \hspace*{10pt}Other Requirements}
+\addcontentsline{toc}{section}{6. \hspace*{10pt}Other Requirements}
+\setlength{\parskip}{12.0pt}
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{Appendix A: Glossary}\par}\par
+
+MHC-PMS : Mental Health Care - Patient Management System\par
+
+REQ-$\#$  : Requirement $\#$ \par
+
+Mentcare : Mental Health Care System\par
+
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{Appendix B: Analysis Models}\par}\par
+
+
+\vspace{\baselineskip}
+
+
+
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=6.5in,height=0.94in]{./media/image6.png}
+	\end{Center}
+\end{figure}
+
+
+
+
+\par
+
+
+
+
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=6.2in,height=3.95in]{./media/image5.png}
+	\end{Center}
+\end{figure}
+
+
+
+
+\par
+
+
+
+
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=5.56in,height=3.5in]{./media/image4.png}
+	\end{Center}
+\end{figure}
+
+
+
+
+\par
+
+
+
+
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=6.5in,height=4.21in]{./media/image1.png}
+	\end{Center}
+\end{figure}
+
+
+
+\par
+
+
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=6.5in,height=3.83in]{./media/image2.png}
+	\end{Center}
+\end{figure}
+
+
+\par
+
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{Appendix C: To Be Determined List}\par}\par
+
+\begin{itemize}
+	\item N/A 
+\end{itemize}\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\printbibliography
+\end{document}
